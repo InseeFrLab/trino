@@ -1,4 +1,4 @@
-FROM trinodb/trino:364
+FROM trinodb/trino:368
 
 RUN curl https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.0/hadoop-aws-3.2.0.jar -o /usr/lib/trino/plugin/hive/hadoop-aws-3.2.0.jar 
 
