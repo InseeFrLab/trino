@@ -1,5 +1,8 @@
-FROM trinodb/trino:374
+FROM trinodb/trino:375
 
-RUN curl https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.0/hadoop-aws-3.2.0.jar -o /usr/lib/trino/plugin/hive/hadoop-aws-3.2.0.jar 
+ARG HADOOP_VERSION=3.3.1
+ARG AWS_SDK_VERSION=1.12.172
 
-RUN curl https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.946/aws-java-sdk-bundle-1.11.946.jar -o /usr/lib/trino/plugin/hive/aws-java-sdk-bundle-1.12.172.jar 
+RUN curl https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${HADOOP_VERSION}/hadoop-aws-${HADOOP_VERSION}.jar -o /usr/lib/trino/plugin/hive/hadoop-aws-${HADOOP_VERSION}.jar 
+
+RUN curl https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${AWS_SDK_VERSION}/aws-java-sdk-bundle-${AWS_SDK_VERSION}.jar -o /usr/lib/trino/plugin/hive/aws-java-sdk-bundle-${AWS_SDK_VERSION}.jar 
