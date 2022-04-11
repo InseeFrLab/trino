@@ -1,4 +1,4 @@
-FROM trinodb/trino:375
+FROM trinodb/trino:376
 
 ARG HADOOP_VERSION=3.3.1
 ARG AWS_SDK_VERSION=1.12.172
