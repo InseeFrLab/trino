@@ -1,8 +1,8 @@
 FROM trinodb/trino:439
 
-ARG HADOOP_VERSION=3.3.6
+ARG HADOOP_VERSION=3.3.5
 ARG AWS_SDK_VERSION=1.12.657
 
-RUN curl https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${HADOOP_VERSION}/hadoop-aws-${HADOOP_VERSION}.jar -o /usr/lib/trino/plugin/hive/hadoop-aws-${HADOOP_VERSION}.jar 
+RUN curl https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${HADOOP_VERSION}/hadoop-aws-${HADOOP_VERSION}.jar -o /usr/lib/trino/plugin/hive/hdfs/hadoop-aws-${HADOOP_VERSION}.jar 
 
-RUN curl https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${AWS_SDK_VERSION}/aws-java-sdk-bundle-${AWS_SDK_VERSION}.jar -o /usr/lib/trino/plugin/hive/aws-java-sdk-bundle-${AWS_SDK_VERSION}.jar 
+RUN curl https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${AWS_SDK_VERSION}/aws-java-sdk-bundle-${AWS_SDK_VERSION}.jar -o /usr/lib/trino/plugin/hive/hdfs/aws-java-sdk-bundle-${AWS_SDK_VERSION}.jar 
